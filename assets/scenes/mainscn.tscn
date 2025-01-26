@@ -1,0 +1,130 @@
+[gd_scene load_steps=7 format=3 uid="uid://dmfuvxqdj1wgt"]
+
+[ext_resource type="Script" path="res://assets/scripts/control.gd" id="1_phtcy"]
+[ext_resource type="Texture2D" uid="uid://xqpwnj6ogv6e" path="res://assets/images/background.jpg" id="1_yhrqy"]
+[ext_resource type="PackedScene" uid="uid://bo5qcffks15q" path="res://assets/scenes/rain.scn" id="2_t5jwm"]
+[ext_resource type="AudioStream" uid="uid://dm4n28fqgjuf4" path="res://assets/sound/menu_music.wav" id="3_vj4ly"]
+
+[sub_resource type="FontVariation" id="FontVariation_sodyd"]
+variation_embolden = -1.09
+spacing_glyph = 5
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gwbla"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_phtcy")
+
+[node name="background" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+metadata/_edit_group_ = true
+
+[node name="Background" type="Sprite2D" parent="background"]
+position = Vector2(576, 324)
+scale = Vector2(0.609201, 0.65587)
+texture = ExtResource("1_yhrqy")
+
+[node name="rain" parent="." instance=ExtResource("2_t5jwm")]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_vj4ly")
+autoplay = true
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="start" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 266.0
+offset_right = 158.0
+offset_bottom = 352.0
+tooltip_text = "Start a new game"
+theme_override_colors/font_hover_pressed_color = Color(0, 0.74902, 0, 1)
+theme_override_colors/font_hover_color = Color(0.67451, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0.588235, 0, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 0.298039, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_sodyd")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxTexture_gwbla")
+text = "Start"
+flat = true
+alignment = 0
+
+[node name="settings" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 369.0
+offset_right = 208.0
+offset_bottom = 455.0
+tooltip_text = "Start a new game"
+theme_override_colors/font_hover_pressed_color = Color(0, 0.74902, 0, 1)
+theme_override_colors/font_hover_color = Color(0.67451, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0.588235, 0, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 0.298039, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_sodyd")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxTexture_gwbla")
+text = "Settings
+"
+flat = true
+alignment = 0
+
+[node name="about" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 458.0
+offset_right = 208.0
+offset_bottom = 544.0
+tooltip_text = "Start a new game"
+theme_override_colors/font_hover_pressed_color = Color(0, 0.74902, 0, 1)
+theme_override_colors/font_hover_color = Color(0.67451, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0.588235, 0, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 0.298039, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_sodyd")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxTexture_gwbla")
+text = "About"
+flat = true
+alignment = 0
+
+[node name="exit" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 541.0
+offset_right = 208.0
+offset_bottom = 627.0
+tooltip_text = "Start a new game"
+theme_override_colors/font_hover_pressed_color = Color(0, 0.74902, 0, 1)
+theme_override_colors/font_hover_color = Color(0.67451, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0.588235, 0, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 0.298039, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_sodyd")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxTexture_gwbla")
+text = "Exit"
+flat = true
+alignment = 0
+
+[connection signal="pressed" from="Control/exit" to="." method="_on_exit_pressed"]
