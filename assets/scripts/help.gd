@@ -7,8 +7,8 @@ static func random(v):
 
 
 # افتراض أن لدينا نموذج لسلوك الهبوط
-var previous_y: float = 0.0
-var previous_z: float = 0.0
+#var previous_y: float = 0.0
+#var previous_z: float = 0.0
 '''
 # دالة لتوقع z بناءً على y و السرعة
 func predict_z(current_y: float, speed: float) -> float:
