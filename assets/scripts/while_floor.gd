@@ -11,7 +11,7 @@ var ss=false
 func rand_posd(li: float) -> Vector3:
 	var random_x = randf_range(-15, 15)
 	var random_y = randf_range(40, 90)
-	var z_value = (random_y*li) /0.16*random_y #85 - (li * 0.1)#- (random_y * 0.05) # التعديل على Z بناءً على سرعة الكرة
+	var z_value = 85 - (li * 0.1)#- (random_y * 0.05) # التعديل على Z بناءً على سرعة الكرة
 	return Vector3(random_x, random_y, z_value)
 
 
