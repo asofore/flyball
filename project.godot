@@ -11,13 +11,14 @@ config_version=5
 [application]
 
 config/name="flyball"
-run/main_scene="res://assets/scenes/first_level.scn"
+run/main_scene="res://assets/scenes/mainscn.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
-config/icon="res://icon.svg"
 
 [display]
 
 window/size/mode=2
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
 
 [dotnet]
 
@@ -26,6 +27,23 @@ project/assembly_name="flyball"
 [editor]
 
 run/main_run_args="--rendering-driver opengl3"
+
+[file_customization]
+
+folder_colors={
+"res://assets/Images/": "blue",
+"res://assets/Models/": "red",
+"res://assets/env/": "yellow",
+"res://assets/objects/": "green",
+"res://assets/scenes/": "purple",
+"res://assets/scripts/": "gray",
+"res://assets/sound/": "orange",
+"res://assets/texture/": "pink"
+}
+
+[filesystem]
+
+import/blender/enabled=false
 
 [input]
 
