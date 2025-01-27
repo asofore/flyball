@@ -1,7 +1,6 @@
-[gd_scene load_steps=23 format=4 uid="uid://dmfuvxqdj1wgt"]
+[gd_scene load_steps=22 format=4 uid="uid://dmfuvxqdj1wgt"]
 
 [ext_resource type="Script" path="res://assets/scripts/control.gd" id="1_phtcy"]
-[ext_resource type="PackedScene" uid="uid://bo5qcffks15q" path="res://assets/scenes/rain.scn" id="2_t5jwm"]
 [ext_resource type="AudioStream" uid="uid://dm4n28fqgjuf4" path="res://assets/sound/menu_music.wav" id="3_vj4ly"]
 
 [sub_resource type="FontVariation" id="FontVariation_sodyd"]
@@ -194,8 +193,6 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_phtcy")
 
-[node name="rain" parent="." instance=ExtResource("2_t5jwm")]
-
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_vj4ly")
 autoplay = true
@@ -205,24 +202,25 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = -6.0
+offset_bottom = 9.0
 grow_horizontal = 2
 grow_vertical = 2
-metadata/_edit_use_anchors_ = true
 
 [node name="start" type="Button" parent="Control"]
 layout_mode = 0
-offset_left = 11.0
-offset_top = 266.0
-offset_right = 158.0
-offset_bottom = 352.0
+offset_left = 21.0
+offset_top = 717.0
+offset_right = 168.0
+offset_bottom = 803.0
 tooltip_text = "Start a new game"
 theme_override_colors/font_hover_pressed_color = Color(0, 0.74902, 0, 1)
 theme_override_colors/font_hover_color = Color(0.67451, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0.588235, 0, 1)
 theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
-theme_override_colors/font_color = Color(1, 0.298039, 0, 1)
+theme_override_colors/font_color = Color(1, 0.913274, 0.888114, 1)
 theme_override_fonts/font = SubResource("FontVariation_sodyd")
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 58
 theme_override_styles/focus = SubResource("StyleBoxTexture_gwbla")
 text = "Start"
 flat = true
@@ -230,18 +228,18 @@ alignment = 0
 
 [node name="settings" type="Button" parent="Control"]
 layout_mode = 0
-offset_left = 11.0
-offset_top = 369.0
-offset_right = 208.0
-offset_bottom = 455.0
+offset_left = 21.0
+offset_top = 820.0
+offset_right = 218.0
+offset_bottom = 906.0
 tooltip_text = "Start a new game"
 theme_override_colors/font_hover_pressed_color = Color(0, 0.74902, 0, 1)
 theme_override_colors/font_hover_color = Color(0.67451, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0.588235, 0, 1)
 theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
-theme_override_colors/font_color = Color(1, 0.298039, 0, 1)
+theme_override_colors/font_color = Color(1, 0.913274, 0.888114, 1)
 theme_override_fonts/font = SubResource("FontVariation_sodyd")
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 58
 theme_override_styles/focus = SubResource("StyleBoxTexture_gwbla")
 text = "Settings
 "
@@ -250,18 +248,18 @@ alignment = 0
 
 [node name="about" type="Button" parent="Control"]
 layout_mode = 0
-offset_left = 11.0
-offset_top = 458.0
-offset_right = 208.0
-offset_bottom = 544.0
+offset_left = 21.0
+offset_top = 909.0
+offset_right = 218.0
+offset_bottom = 995.0
 tooltip_text = "Start a new game"
 theme_override_colors/font_hover_pressed_color = Color(0, 0.74902, 0, 1)
 theme_override_colors/font_hover_color = Color(0.67451, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0.588235, 0, 1)
 theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
-theme_override_colors/font_color = Color(1, 0.298039, 0, 1)
+theme_override_colors/font_color = Color(1, 0.913274, 0.888114, 1)
 theme_override_fonts/font = SubResource("FontVariation_sodyd")
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 58
 theme_override_styles/focus = SubResource("StyleBoxTexture_gwbla")
 text = "About"
 flat = true
@@ -269,18 +267,18 @@ alignment = 0
 
 [node name="exit" type="Button" parent="Control"]
 layout_mode = 0
-offset_left = 11.0
-offset_top = 541.0
-offset_right = 208.0
-offset_bottom = 627.0
+offset_left = 21.0
+offset_top = 992.0
+offset_right = 218.0
+offset_bottom = 1078.0
 tooltip_text = "Start a new game"
 theme_override_colors/font_hover_pressed_color = Color(0, 0.74902, 0, 1)
 theme_override_colors/font_hover_color = Color(0.67451, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0.588235, 0, 1)
 theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
-theme_override_colors/font_color = Color(1, 0.298039, 0, 1)
+theme_override_colors/font_color = Color(1, 0.913274, 0.888114, 1)
 theme_override_fonts/font = SubResource("FontVariation_sodyd")
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 58
 theme_override_styles/focus = SubResource("StyleBoxTexture_gwbla")
 text = "Exit"
 flat = true
@@ -329,7 +327,7 @@ autoplay = "CylinderAction"
 transform = Transform3D(0.997899, -0.0647936, 0, 0.0641342, 0.987744, -0.142301, 0.00922017, 0.142002, 0.989823, -0.366935, -4.76837e-07, -0.204716)
 
 [node name="Cylinder" type="MeshInstance3D" parent="MeshInstance3D/Start-Crystal"]
-transform = Transform3D(0.999999, 0, -0.00150062, 0, 0.185617, 0, 0.00150062, 0, 0.999999, 0, 0, 0)
+transform = Transform3D(0.999999, 0, -0.00150063, 0, 0.185617, 0, 0.00150063, 0, 0.999999, 0, 0, 0)
 mesh = SubResource("ArrayMesh_gl75w")
 skeleton = NodePath("")
 

@@ -1,6 +1,5 @@
 extends RigidBody3D
 
-
 @export var speed=-12.0
 @export var speed_x=4
 @export var speed_anguler=5
@@ -20,8 +19,8 @@ func _ready():
 func _input(event):
 	
 	if Input.is_action_just_pressed('ui_accept') and ray.is_colliding():
-	
 		linear_velocity.y=jump
+
 
 func _physics_process(delta):
 	
