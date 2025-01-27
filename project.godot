@@ -23,6 +23,10 @@ window/size/mode=2
 
 project/assembly_name="flyball"
 
+[editor]
+
+run/main_run_args="--rendering-driver opengl3"
+
 [input]
 
 ui_left={
