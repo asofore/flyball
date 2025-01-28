@@ -7,12 +7,17 @@ extends RigidBody3D
 @onready var help=preload("res://assets/scripts/help.gd")
 @onready var area=$area
 @onready var ray=$"../../ray/raycast"
-
+@onready var Health = 2
 
 
 
 
 func _ready():
+	match SaveGame.player:
+		1:
+			Health += 0
+		2:
+			Health += 2
 
 	pass
 
