@@ -22,8 +22,6 @@ func _ready():
 	pass
 	
 func _input(event):
-	if Input.is_action_just_pressed('ui_cancel'):
-		get_tree().quit()
 	#if event is InputEventMouseMotion:
 	if event is InputEventMouseMotion:
 		#d=rotation_degrees.x-event.relative.y *rtr
