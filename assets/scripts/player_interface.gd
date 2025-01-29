@@ -4,18 +4,20 @@ extends Control
 
 func _ready() -> void:
 	animation_player.play("RESET")
+	player_interface.hide()
+	get_tree().paused = false
 
 func resume():
 	get_tree().paused = false
 	animation_player.play_backwards("blur")
-	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	player_interface.hide()
 
 func pause():
 	player_interface.show()
 	get_tree().paused = true
 	animation_player.play("blur")
-	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	Input.mouse_mode = Input.MOUSE_MODE_CONFINED
 	
 
 func _process(delta: float) -> void:
@@ -29,23 +31,27 @@ func testEsc():
 
 func _on_resume_pressed() -> void:
 	resume()
+	get_tree().paused = false
 
 
 func _on_restart_pressed() -> void:
-	
 	resume()
 	get_tree().reload_current_scene()
-	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	Input.mouse_mode = Input.MOUSE_MODE_CONFINED
 	player_interface.hide()
+	get_tree().paused = false
 
 
 func _on_quit_pressed() -> void:
 	get_tree().quit()
+	get_tree().paused = false
 
 
 func _on_menu_pressed() -> void:
+	get_tree().paused = false
 	get_tree().change_scene_to_file("res://assets/scenes/mainscn.tscn")
 
 
 func _on_vilage_pressed() -> void:
+	get_tree().paused = false
 	get_tree().change_scene_to_file("res://assets/HomeLand/home.scn")
